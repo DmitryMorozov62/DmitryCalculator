@@ -5,31 +5,37 @@ import org.springframework.stereotype.Service;
 @Service
 public class CalculatorImpl  implements Calculator {
     @Override
-    public String answerPlus(Integer firstNumber, Integer secondNumber) {
-        return "<font size=\"20\" color= \"#00FF00\">" +"\""+ firstNumber+" + "+ secondNumber+ " = "+
-                (firstNumber + secondNumber)+"\"" +"</font>";
+    public Integer answerPlus(Integer firstNumber, Integer secondNumber) {
+        return firstNumber + secondNumber;
     }
 
     @Override
-    public String answerMinus(Integer firstNumber, Integer secondNumber) {
-        return "<font size=\"20\" color= \"#00FF00\">" +"\""+ firstNumber+" - "+ secondNumber+ " = "+
-                (firstNumber - secondNumber)+"\"" +"</font>";
+    public Integer answerMinus(Integer firstNumber, Integer secondNumber) {
+        return (firstNumber - secondNumber);
     }
 
     @Override
-    public String answerMultiply(Integer firstNumber, Integer secondNumber) {
-        return "<font size=\"20\" color= \"#00FF00\">" +"\""+ firstNumber+" * "+ secondNumber+ " = "+
-                (firstNumber * secondNumber)+"\"" +"</font>";
+    public Integer answerMultiply(Integer firstNumber, Integer secondNumber) {
+        return (firstNumber * secondNumber);
     }
 
     @Override
-    public String answerDivide(Double firstNumber, Double secondNumber) {
-        if (secondNumber == 0){
-            return "<font size=\"20\" color= \"FF0000\">На 0 лучше не делить</font>";
-        }
-        return "<font size=\"20\" color= \"#00FF00\">" +"\""+ firstNumber.intValue() +" / "+ secondNumber.intValue() + " = "+
-                String.format("%.1f",firstNumber / secondNumber) +"\"" +"</font>";
+    public Double answerDivide(Double firstNumber, Double secondNumber) {
+        return firstNumber / secondNumber;
     }
 
+    @Override
+    public boolean nullPointerException(Integer num1, Integer num2) {
+        if (num1 == null || num2 == null) {
+            return true;
+        }return false;
+    }
+
+    @Override
+    public boolean nullPointerException(Double num1, Double num2) {
+        if (num1 == null || num2 == null) {
+            return true;
+        }return false;
+    }
 }
 

@@ -1,9 +1,11 @@
 package DmitryCalculator;
 
 public interface Calculator {
-    String answerPlus(Integer firstNumber, Integer secondNumber);
-    String answerMinus(Integer firstNumber, Integer secondNumber);
-    String answerMultiply(Integer firstNumber, Integer secondNumber);
-    String answerDivide(Double firstNumber, Double secondNumber);
+    Integer answerPlus(Integer num1, Integer num2);
+    Integer answerMinus(Integer num1, Integer num2);
+    Integer answerMultiply(Integer num1, Integer num2);
+    Double answerDivide(Double num1, Double num2);
+    boolean nullPointerException(Integer num1, Integer num2);
+    boolean nullPointerException(Double num1, Double num2);
 
 }
